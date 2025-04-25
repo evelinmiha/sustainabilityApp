@@ -21,9 +21,9 @@ if (isset($_SESSION['company_id'])) {
 <body>
     <h1>Cookies Policy</h1>
 
-    <p><strong>Effective Date:</strong> [18/12/2024]</p>
+    <p><strong>Effective Date:</strong> [17/04/2025]</p>
 
-    <p>At Edinburgh Cinema, we use cookies to improve your experience on our website. This Cookies Policy explains what cookies are, how we use them, and your choices regarding cookies.</p>
+    <p>At Sustain Energy, we use cookies to improve your experience on our website. This Cookies Policy explains what cookies are, how we use them, and your choices regarding cookies.</p>
 
     <h2>1. What Are Cookies?</h2>
     <p>Cookies are small text files that are stored on your device when you visit a website. They allow the website to remember your preferences and actions over time. Cookies may be "persistent" (remaining on your device for a specified period) or "session" (lasting only for the duration of your visit).</p>
@@ -55,8 +55,8 @@ if (isset($_SESSION['company_id'])) {
     <h2>6. Contact Us</h2>
     <p>If you have any questions or concerns about this Cookies Policy, please contact us at:</p>
     <ul>
-        <li><strong>Email:</strong> contact@edinburghcinema.com</li>
-        <li><strong>Address:</strong> 123 Cinema Street, Edinburgh, EH1 1AA, Scotland, UK</li>
+        <li><strong>Email:</strong> sustainenergy@hotmail.com</li>
+        <li><strong>Address:</strong> 123 Edinburgh Street, Edinburgh, EH1 1AA, Scotland, UK</li>
         <li><strong>Phone:</strong> +44 131 123 4567</li>
     </ul>
     <?php
