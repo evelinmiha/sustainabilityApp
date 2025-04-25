@@ -4,6 +4,7 @@ session_start();
 # Redirect if not logged in.
 if (!isset($_SESSION['admin_id'])) {
   require('login_tools.php'); 
+
   load();  # Redirect to login page
 }
 
