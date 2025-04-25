@@ -21,9 +21,10 @@ if (isset($_SESSION['company_id'])) {
 <body>
     <h1>Privacy Policy</h1>
 
-    <h2>Effective Date: [17/12/2024]</h2>
+    <h2>Effective Date: [17/04/2025]</h2>
 
-    <p>At [Edinburgh Cinema], we value your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website. Please read this policy carefully. By accessing or using our website, you agree to the collection and use of your information as described in this policy.</p>
+    <p>At Sustain Energy, we value your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website. 
+        Please read this policy carefully. By accessing or using our website, you agree to the collection and use of your information as described in this policy.</p>
 
     <h3>1. Information We Collect</h3>
     <p>We may collect the following types of information:</p>
@@ -66,9 +67,9 @@ if (isset($_SESSION['company_id'])) {
     <h3>8. Contact Us</h3>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
     <ul>
-        <li><strong>Email:</strong> [edinburghcinema@hotmail.com]</li>
-        <li><strong>Address:</strong> [123 Cinema Street, Edinburgh, EH1 1AA, Scotland, UK]</li>
-        <li><strong>Phone:</strong> [+44 131 123 4567]</li>
+        <li><strong>Email:</strong> sustainenergy@hotmail.com</li>
+        <li><strong>Address:</strong> 123 Edinburgh Street, Edinburgh, EH1 1AA, Scotland, UK</li>
+        <li><strong>Phone:</strong> +44 131 123 4567</li>
     </ul>
     <?php
     // Include the footer
