@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Manually set session variables for testing
 require('connect_db.php'); // Ensure you have a database connection file
 # Redirect if not logged in.
 if (!isset($_SESSION['company_id'])) {
@@ -57,10 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  $tran = isset($_POST["measure9"]) ? (int)$_POST["measure9"] : 0;
 
  // Insert query to store data into the greencalculator table
- $query = "INSERT INTO greencalculator 
+ $query = "INSERT INTO greencalculator
              (carbonReduction, wasteReduction, biodiversity, energyEfficiency, transportationSustainability, ecoProducts, packaging, compliance, education, transparency, totalScore, company_id)
            VALUES 
              ('$car', '$was', '$bio', '$ene', '$tra', '$eco', '$pac', '$com', '$edu', '$tran','$totalScore', '$company_id')";
+
 
  // Execute the query and check for errors
  $result = mysqli_query($link, $query);
@@ -98,10 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
  // Close the database connection
  mysqli_close($link);
-
-
-
-
 
 
     header("Location: rubricResult.php"); // Redirect to results page
