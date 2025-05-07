@@ -183,7 +183,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Waste Reduction:</label>
-            <p class="description">Reflects how well your company has managed to recuce waste and improves recycling.</p>
+            <p class="description">Reflects how well your company has managed to reduce waste and improves recycling.</p>
             <select name="measure1" onchange="updateColor(this)" id="measure1">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
