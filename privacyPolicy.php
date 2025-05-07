@@ -64,7 +64,18 @@ if (isset($_SESSION['company_id'])) {
     <h3>7. Changes to This Privacy Policy</h3>
     <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page, and the "Effective Date" will be updated accordingly.</p>
 
-    <h3>8. Contact Us</h3>
+    <h3>8. Copyright and Ownership</h3>
+<p>
+All content, features, functionality, design, and code used in this website are the intellectual property of <strong>Evelin Mihaylov</strong> and are protected by applicable copyright, trademark, and other intellectual property laws.
+</p>
+<p>
+Unauthorized use, reproduction, or distribution of any part of this website, including but not limited to text, graphics, logos, images, and software, is strictly prohibited. Any violation may result in legal action.
+</p>
+<p>
+By accessing this website, you agree to respect the intellectual property rights of the owner and comply with all relevant legal obligations.
+</p>
+
+    <h3>9. Contact Us</h3>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
     <ul>
         <li><strong>Email:</strong> sustainenergy@hotmail.com</li>
