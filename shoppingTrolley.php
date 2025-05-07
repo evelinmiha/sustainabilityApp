@@ -7,15 +7,35 @@ if (!isset($_SESSION['company_id'])) {
     load();
     exit();
 }
+require('connect_db.php'); // make sure this connects $link
+$company_id = $_SESSION['company_id'];
 
-# Ensure shortfall information is available.
-if (!isset($_SESSION['shortfall']) || $_SESSION['shortfall'] == 0) {
-    echo "<div class='container'><div class='alert alert-success'>No donation needed. Your sustainability score is perfect!</div>";
-    echo "<a href='greenCalculator.php' class='btn btn-primary'>Go Back</a></div>";
-    exit();
+# Fetch latest totalScore
+$q = "SELECT totalScore FROM greencalculator WHERE company_id = $company_id ORDER BY submission_date DESC LIMIT 1";
+$r = mysqli_query($link, $q);
+$row = mysqli_fetch_assoc($r);
+$score = $row ? (int)$row['totalScore'] : null;
+
+# Fetch total purchased vouchers
+$q2 = "SELECT SUM(points_purchased) AS total_purchased FROM vouchers WHERE company_id = $company_id";
+$r2 = mysqli_query($link, $q2);
+$row2 = mysqli_fetch_assoc($r2);
+$purchased = isset($row2['total_purchased']) ? (int)$row2['total_purchased'] : 0;
+
+# Define the maximum score (assumed to be 100)
+$targetScore = 100;
+
+if ($score === null) {
+    // Green calculator not used yet
+    $shortfall = 0;
+    $showDonationNeeded = false;
+} else {
+
+
+$shortfall = max($targetScore - $score - $purchased, 0); // prevent negative shortfalls
+$showDonationNeeded = ($shortfall > 0);
 }
 
-$shortfall = $_SESSION['shortfall'];
 $voucherPrice = 10;
 $total = $shortfall * $voucherPrice;
 
@@ -56,9 +76,16 @@ $total = $shortfall * $voucherPrice;
 <?php include('navUser.php'); ?>
     <div class="container mt-5">
         <h1 class="text-center">Shopping Trolley</h1>
-        <div class="card bg-light p-4">
+        
 
+        <?php if (!$showDonationNeeded): ?>
+        <div class="alert alert-success text-center">
+            <h4>No donation needed.</h4>
+            <a href="greenCalculator.php" class="btn btn-primary mt-3">Go Back</a>
+        </div>
+    <?php else: ?>
 
+            <div class="card bg-light p-4">
             <form method="POST" action="checkout.php" id="checkoutForm">
                 <div class="mb-3">
                     <h5>Vouchers for Sustainability Shortfall</h5>
@@ -83,6 +110,7 @@ $total = $shortfall * $voucherPrice;
         <div class="text-center mt-3">
             <a href="rubricResult.php" class="btn btn-secondary">Back to Results</a>
         </div>
+        <?php endif; ?>
     </div>
 
     <?php include('footer.php'); ?>
