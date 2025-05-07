@@ -21,7 +21,7 @@ if (isset($_SESSION['company_id'])) {
 <body>
     <h1>Cookies Policy</h1>
 
-    <p><strong>Effective Date:</strong> [17/04/2025]</p>
+    <p><strong>Effective Date:</strong> 17/04/2025</p>
 
     <p>At Sustain Energy, we use cookies to improve your experience on our website. This Cookies Policy explains what cookies are, how we use them, and your choices regarding cookies.</p>
 
