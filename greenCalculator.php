@@ -47,11 +47,9 @@ if (mysqli_num_rows($result) > 0) {
     exit();
 }
 
-var_dump($link);
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-var_dump($_SESSION['company_id']);
 
 ?>
 
@@ -177,6 +175,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
         <form action="rubricGreenCalculator.php" method="POST">
 
     <label>Carbon Emissions Reduction:</label>
+    <p class="description">Reflects how well your company has managed to recuce carbon emissions through cleaner energy use, improving equipment, or reduced fuel consumption.</p>
             <select name="measure0" onchange="updateColor(this)" id="measure0">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -184,6 +183,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Waste Reduction:</label>
+            <p class="description">Reflects how well your company has managed to recuce waste and improves recycling.</p>
             <select name="measure1" onchange="updateColor(this)" id="measure1">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -191,6 +191,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Biodiversity Preservation:</label>
+            <p class="description">Reflects how well your company has managed to protect nature and local animal life.</p>
             <select name="measure2" onchange="updateColor(this)" id="measure2">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -199,6 +200,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
 
 
             <label>Energy Efficiency:</label>
+            <p class="description">Reflects how effectively your company has improved the energy efficiency of its buildings, equipment and operations.</p>
             <select name="measure3" onchange="updateColor(this)" id="measure3">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -206,6 +208,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Sustainable Transport:</label>
+            <p class="description">Reflects how effectively your company has adopted fuel-efficent and environmentally friendly use of vehicles.</p>
             <select name="measure4" onchange="updateColor(this)" id="measure4">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -213,6 +216,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Eco-Friendly Products:</label>
+            <p class="description">Reflects how effectively your company has adopted the use of fuel-efficent and environmentally friendly vehicles.</p>
             <select name="measure5" onchange="updateColor(this)" id="measure5">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -221,6 +225,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
 
       
             <label>Sustainable Packaging:</label>
+            <p class="description">Reflects how effectively your company has adopted the use of eco-friendly packaging materials and practices.</p>
             <select name="measure6" onchange="updateColor(this)" id="measure6">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -228,6 +233,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Environmental Compliance:</label>
+            <p class="description">Reflects how effectively your company follows all environmental laws and rules.</p>
             <select name="measure7" onchange="updateColor(this)" id="measure7">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -235,6 +241,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Employee Sustainability Education:</label>
+            <p class="description">Reflects your company`s efforts to educate and engage employees in sustainability practices within and outside the workplace.</p>
             <select name="measure8" onchange="updateColor(this)" id="measure8">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
@@ -242,6 +249,7 @@ Your responses contribute to a transparent, ethical, and greener future.</p>
             </select><br>
 
             <label>Transparency & Reporting:</label>
+            <p class="description">Reflects your company`s transparency of sharing the sustainability practices, such as the publication of a sustainability report. </p>
             <select name="measure9" onchange="updateColor(this)" id="measure9">
                 <option value="0">🔴 Red (0 pts)</option>
                 <option value="5">🟠 Amber (5 pts)</option>
