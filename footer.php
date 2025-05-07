@@ -28,9 +28,11 @@
           <p>
             <a href="aboutUs.php" class="text-reset">About Us</a>
           </p>
+          <?php if (!isset($_SESSION['admin_id'])): ?>
           <p>
-            <a href="contactPage.php" class="text-reset">Contact Us</a>
-          </p>
+         <a href="contactPage.php" class="text-reset">Contact Us</a>
+        </p>
+          <?php endif; ?>
           <p>
             <a href="privacyPolicy.php" class="text-reset">Privacy Policy</a>
           </p>
@@ -58,12 +60,13 @@
   </section>
   <!-- Section: Links  -->
 
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://yourwebsite.com">Sustain Energy</a>
-  </div>
-  <!-- Copyright -->
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); font-size: 14px;">
+  © 2025 Sustain Energy. All rights reserved.<br>
+  This platform and its content are the intellectual property of <strong>Evelin Mihaylov</strong>. 
+  Unauthorized copying, distribution, or modification is strictly prohibited.
+</div>
+<!-- Copyright -->
 </footer>
 <!-- Footer -->
 
