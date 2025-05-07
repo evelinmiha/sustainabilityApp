@@ -21,7 +21,7 @@ if (isset($_SESSION['company_id'])) {
 <body>
     <h1>Privacy Policy</h1>
 
-    <h2>Effective Date: [17/04/2025]</h2>
+    <h2>Effective Date: 17/04/2025</h2>
 
     <p>At Sustain Energy, we value your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website. 
         Please read this policy carefully. By accessing or using our website, you agree to the collection and use of your information as described in this policy.</p>
