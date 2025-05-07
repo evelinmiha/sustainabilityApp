@@ -1,6 +1,8 @@
 <?php
 # Access session.
 session_start();
+
+
 # Redirect if not logged in.
 if (!isset($_SESSION['admin_id'])) {
   require('login_tools.php'); 
@@ -59,8 +61,16 @@ require('connect_db.php');
 $q = "SELECT * FROM company";
 $r = mysqli_query($link, $q);
 
+
+
 echo '<div class="container py-4">';
-echo '<h2 class="text-center">Registered Companies</h2>';
+
+echo '
+<!-- Create New User Button -->
+<div class="text-center mb-4">
+    <a href="create.php" class="btn btn-primary">Create New User</a>
+</div>
+ <h2 class="text-center">Registered Companies</h2>';
 
 
 if (mysqli_num_rows($r) > 0) {
@@ -76,7 +86,8 @@ if (mysqli_num_rows($r) > 0) {
               <p class="card-text"><strong>Email:</strong> ' . htmlspecialchars($row['email']) . '</p>
               <p class="card-text"><strong>Join Date:</strong> ' . htmlspecialchars($row['join_date']) . '</p>
               <p class="card-text"><strong>Subscription Status:</strong> ' . htmlspecialchars($row['subscription_status']) . '</p>
-              <a href="update.php?company_id=' . htmlspecialchars($row['company_id']) . '" class="btn btn-success btn-block mb-2">Deactivate Subscription</a>
+              <a href="update.php?company_id=' . htmlspecialchars($row['company_id']) . '" class="btn btn-warning btn-block mb-2">Update Company</a>
+              <a href="deactivate.php?company_id=' . htmlspecialchars($row['company_id']) . '" class="btn btn-success btn-block mb-2">Deactivate Subscription</a>
               <a href="delete.php?company_id=' . htmlspecialchars($row['company_id']) . '" class="btn btn-danger btn-sm">Delete Company</a>
             </div>
           </div>
