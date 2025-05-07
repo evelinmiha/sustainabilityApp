@@ -28,9 +28,35 @@ $r = mysqli_query($link, $q);
 $data = mysqli_fetch_assoc($r);
 $total_donated = $data['total_donated'] ?? 0;
 
-// Fetch current score and certification from session
-$score = $_SESSION['green_score'] ?? 0;
-$certification = $_SESSION['certification'] ?? 'BRONZE';
+// Fetch total score from greencalculator table
+$score_query = "SELECT totalScore FROM greencalculator WHERE company_id = $company_id LIMIT 1";
+$score_result = mysqli_query($link, $score_query);
+
+if ($score_result && mysqli_num_rows($score_result) > 0) {
+    $score_data = mysqli_fetch_assoc($score_result);
+    $score = $score_data['totalScore'];
+} else {
+    $score = 0;
+}
+
+
+// Fetch certification level from certificate table
+$cert_query = "SELECT level, issueDate FROM certificate WHERE company_id = $company_id ORDER BY issueDate DESC LIMIT 1";
+
+$cert_result = mysqli_query($link, $cert_query);
+
+
+if ($cert_result && mysqli_num_rows($cert_result) > 0) {
+    $cert_data = mysqli_fetch_assoc($cert_result);
+    $certification = strtoupper($cert_data['level']); // Ensure uppercase for display logic
+    $issue_date = date("d F Y", strtotime($cert_data['issueDate']));
+} else {
+    $certification = 'BRONZE'; // Fallback
+    $issue_date = date("d F Y"); // fallback to today's date
+}
+
+
+
 $company_name = $_SESSION['company_name'] ?? 'Your Company';
 
 mysqli_close($link);
@@ -129,7 +155,7 @@ mysqli_close($link);
 
     <p>This contribution supports programs such as Tree Planting and UNESCO Environmental Initiatives.</p>
 
-    <p>Date: <strong><?php echo date("d F Y"); ?></strong></p>
+    <p>Date: <strong><?php echo $issue_date; ?></strong></p>
 
     <a href="#" class="download-btn" onclick="window.print()">🖨️ Print / Save as PDF</a>
 </div>
