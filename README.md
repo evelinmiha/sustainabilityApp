@@ -53,6 +53,22 @@ Folder Structure:
 └── user_account.md              # User account page
 └── adminPage.md              # Admin page
 
+
+ Image Formats
+The application uses various image assets throughout the interface.
+All image files are stored in standard formats with the following extensions:
+
+.avif
+
+.png
+
+.jpg
+
+.jpeg
+
+
+
+
 sustainabilityDB  # project database
 
 
