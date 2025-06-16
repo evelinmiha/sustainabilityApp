@@ -68,19 +68,23 @@ All image files are stored in standard formats with the following extensions:
 
 
 
+Database
+The project uses a MySQL database named sustainabilityDB.
 
-sustainabilityDB  # project database
+
+Live Demo
+You can view the live working site here:
+http://evelin-mihaylov.ct.ws/
 
 
 
 Setup Instructions
 
 1. Start XAMPP
-2. Import the database to phpMyAdmin
+2. Import the database SQL file (sustainabilityDB.sql) into phpMyAdmin.
 3. Copy the files of the project to xampp/htdocs/ SustainabilityApp
 4. In connect_db.php make sure to have your database name, username, and password as needed
-5. Run the project 
-
-Open your browser and go to:
+5. Start Apache and MySQL in XAMPP.
+6. Open your browser and go to:
 http://localhost/SustainabilityApp/
 
